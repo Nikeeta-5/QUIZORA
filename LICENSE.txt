@@ -1,0 +1,24 @@
+
+Copyright © 2026 Nikeeta Malik
+
+QUIZORA: ASSESSMENT STUDIO
+
+This project is the intellectual and creative property of Nikeeta Malik.
+
+All rights reserved.
+
+You are permitted to:
+- View and explore this repository for personal reference.
+- Share the public GitHub repository link.
+
+You are NOT permitted to:
+- Copy, reproduce, reuse, or redistribute any part of the source code.
+- Modify, fork, republish, or distribute this project or its contents.
+- Use any part of this project for commercial, academic, or other purposes without prior written permission from the copyright owner.
+- Claim this project or any part of its contents as your own work.
+
+Unauthorized use, reproduction, or distribution of this project may result in appropriate legal action.
+
+For permission or licensing inquiries, please contact the copyright owner.
+
+© 2026 Nikeeta Malik. All rights reserved.

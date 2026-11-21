@@ -1,0 +1,231 @@
+<!--
+====================================================
+ QUIZORA: ASSESSMENT STUDIO
+ Copyright © 2026 Nikeeta Malik.
+ All Rights Reserved.
+
+ Unauthorized copying, modification, reproduction,
+ or redistribution of this source code is prohibited.
+====================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="QUIZORA: Assessment Studio helps learners create and take quizzes from their study material."
+    >
+
+    <meta name="theme-color" content="#0c0e1a">
+
+    <title>QUIZORA: Assessment Studio</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="#" aria-label="QUIZORA home">
+                QUIZORA<span>.</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="#study-section">Create Quiz</a>
+                <a href="#history-section">Quiz History</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Learn Smarter with <span>QUIZORA</span></h1>
+
+            <p>
+                Turn your study material into interactive quizzes.
+                Practise, check your understanding, and review your results
+                in one place.
+            </p>
+        </section>
+
+        <section id="study-section" class="input-panel">
+            <h2>Your Study Material</h2>
+
+            <p class="section-description">
+                Paste your notes or upload a text-based PDF to get started.
+            </p>
+
+            <label for="study-text" class="setting-label">
+                Paste your text
+            </label>
+
+            <textarea
+                id="study-text"
+                name="study-text"
+                placeholder="Paste your notes, textbook content, or study material here..."
+                spellcheck="true"
+            ></textarea>
+
+            <div class="input-meta">
+                <span>Use clear, meaningful statements for better results.</span>
+                <span id="character-count">0 characters</span>
+            </div>
+
+            <div class="file-upload-row">
+                <label for="pdf-upload" class="setting-label">
+                    Upload a PDF
+                </label>
+
+                <input
+                    id="pdf-upload"
+                    name="pdf-upload"
+                    type="file"
+                    accept=".pdf,application/pdf"
+                >
+
+                <span id="file-status" role="status" aria-live="polite">
+                    No PDF selected
+                </span>
+            </div>
+        </section>
+
+        <section class="settings-panel">
+            <h2>Quiz Settings</h2>
+
+            <p class="section-description">
+                Choose how you want to practise.
+            </p>
+
+            <div class="settings-grid">
+                <div class="setting-field">
+                    <label for="question-count">
+                        Number of Questions
+                    </label>
+
+                    <select id="question-count" name="question-count">
+                        <option value="5">5 Questions</option>
+                        <option value="10" selected>10 Questions</option>
+                        <option value="15">15 Questions</option>
+                        <option value="20">20 Questions</option>
+                    </select>
+                </div>
+
+                <div class="setting-field">
+                    <label for="difficulty">Difficulty</label>
+
+                    <select id="difficulty" name="difficulty">
+                        <option value="Easy">Easy</option>
+                        <option value="Medium" selected>Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                </div>
+
+                <div class="setting-field">
+                    <label for="time-limit">Time Limit</label>
+
+                    <select id="time-limit" name="time-limit">
+                        <option value="0" selected>No Time Limit</option>
+                        <option value="5">5 Minutes</option>
+                        <option value="10">10 Minutes</option>
+                        <option value="15">15 Minutes</option>
+                        <option value="20">20 Minutes</option>
+                        <option value="30">30 Minutes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="settings-checkboxes">
+                <label>
+                    <input
+                        id="shuffle-questions"
+                        name="shuffle-questions"
+                        type="checkbox"
+                        checked
+                    >
+                    Shuffle Questions
+                </label>
+
+                <label>
+                    <input
+                        id="show-explanations"
+                        name="show-explanations"
+                        type="checkbox"
+                        checked
+                    >
+                    Show Explanations in Results
+                </label>
+            </div>
+
+            <button
+                id="generate-quiz"
+                class="primary-button"
+                type="button"
+            >
+                Generate Quiz
+            </button>
+
+            <div
+                id="app-message"
+                class="app-message"
+                role="status"
+                aria-live="polite"
+                hidden
+            ></div>
+        </section>
+
+        <section
+            id="quiz-section"
+            aria-label="Interactive quiz"
+            hidden
+        ></section>
+
+        <section
+            id="results-section"
+            aria-label="Quiz results"
+            hidden
+        ></section>
+
+        <section id="history-section" class="history-panel">
+            <h2>Quiz History</h2>
+
+            <p class="section-description">
+                Review your previously completed quizzes on this browser.
+            </p>
+
+            <div id="quiz-history">
+                <p class="empty-history">
+                    Your completed quizzes will appear here.
+                </p>
+            </div>
+
+            <button
+                id="clear-history"
+                class="secondary-button"
+                type="button"
+                style="margin-top: 16px;"
+            >
+                Clear History
+            </button>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>QUIZORA: Assessment Studio</p>
+        <p>Learn, practise, and assess your understanding.</p>
+    </footer>
+
+    <!-- Storage must load before the quiz application. -->
+    <script src="js/storage.js"></script>
+    <script src="js/quiz-engine.js"></script>
+
+    <!-- PDF.js library must load before pdf.js. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="js/pdf.js"></script>
+
+    <script src="js/chatbot.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
