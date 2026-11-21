@@ -4,7 +4,7 @@ A browser-based educational assessment platform designed to transform study mate
 
 ## Live Preview
 
-Coming Soon — Netlify deployment planned.
+https://quizora-nikeeta.netlify.app
 
 ## Built With
 
